@@ -43,44 +43,44 @@ describe('writer', function () {
       var options = { major: true };
 
       return Writer.markdown(VERSION, [], options)
-      .then(function (changelog) {
-        var heading = changelog.split('\n')[0];
+        .then(function (changelog) {
+          var heading = changelog.split('\n')[0];
 
-        Expect(heading).to.contain('## ' + VERSION);
-      });
+          Expect(heading).to.contain('## ' + VERSION);
+        });
     });
 
     it('makes heading h3 if minor version', function () {
       var options = { minor: true };
 
       return Writer.markdown(VERSION, [], options)
-      .then(function (changelog) {
-        var heading = changelog.split('\n')[0];
+        .then(function (changelog) {
+          var heading = changelog.split('\n')[0];
 
-        Expect(heading).to.contain('### ' + VERSION);
-      });
+          Expect(heading).to.contain('### ' + VERSION);
+        });
     });
 
     it('makes heading h4 if minor version', function () {
       var options = { patch: true };
 
       return Writer.markdown(VERSION, [], options)
-      .then(function (changelog) {
-        var heading = changelog.split('\n')[0];
+        .then(function (changelog) {
+          var heading = changelog.split('\n')[0];
 
-        Expect(heading).to.contain('#### ' + VERSION);
-      });
+          Expect(heading).to.contain('#### ' + VERSION);
+        });
     });
 
     it('keeps only the date if no version is specified', function () {
       var options = { major: true };
 
       return Writer.markdown(false, [], options)
-      .then(function (changelog) {
-        var heading = changelog.split('\n')[0];
+        .then(function (changelog) {
+          var heading = changelog.split('\n')[0];
 
-        Expect(heading).to.equal('## ' + new Date().toJSON().slice(0, 10));
-      });
+          Expect(heading).to.equal('## ' + new Date().toJSON().slice(0, 10));
+        });
     });
 
     it('flushes out a commit type with its full name', function () {
@@ -89,16 +89,16 @@ describe('writer', function () {
       ];
 
       return Writer.markdown(VERSION, commits, {})
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf('#####') > -1;
-      })
-      .get(0)
-      .then(function (line) {
-        Expect(line).to.eql('##### New Features');
-      });
+        .then(function (changelog) {
+          return changelog.split('\n');
+        })
+        .filter(function (line) {
+          return line.indexOf('#####') > -1;
+        })
+        .get(0)
+        .then(function (line) {
+          Expect(line).to.eql('##### New Features');
+        });
     });
 
     it('uses the default type name for uncommon types', function () {
@@ -107,16 +107,16 @@ describe('writer', function () {
       ];
 
       return Writer.markdown(VERSION, commits, {})
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf('#####') > -1;
-      })
-      .get(0)
-      .then(function (line) {
-        Expect(line).to.eql('##### Other Changes');
-      });
+        .then(function (changelog) {
+          return changelog.split('\n');
+        })
+        .filter(function (line) {
+          return line.indexOf('#####') > -1;
+        })
+        .get(0)
+        .then(function (line) {
+          Expect(line).to.eql('##### Other Changes');
+        });
     });
 
     it('groups all uncommon types together', function () {
@@ -126,39 +126,39 @@ describe('writer', function () {
       ];
 
       return Writer.markdown(VERSION, commits, {})
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf('#####') > -1;
-      })
-      .tap(function (lines) {
-        Expect(lines).to.have.length(1);
-      })
-      .map(function (line) {
-        Expect(line).to.eql('##### Other Changes');
-      });
+        .then(function (changelog) {
+          return changelog.split('\n');
+        })
+        .filter(function (line) {
+          return line.indexOf('#####') > -1;
+        })
+        .tap(function (lines) {
+          Expect(lines).to.have.length(1);
+        })
+        .map(function (line) {
+          Expect(line).to.eql('##### Other Changes');
+        });
     });
 
-    it('does not group uncommon types if unknown types are allowed', function () {
-      var commits = [
-        { type: 'uncommon', category: 'testing', subject: 'did some testing', hash: '1234567890' },
-        { type: 'unknown', category: 'testing', subject: 'did some more testing', hash: '1234567890' }
-      ];
+    // it('does not group uncommon types if unknown types are allowed', function () {
+    //   var commits = [
+    //     { type: 'uncommon', category: 'testing', subject: 'did some testing', hash: '1234567890' },
+    //     { type: 'unknown', category: 'testing', subject: 'did some more testing', hash: '1234567890' }
+    //   ];
 
-      return Writer.markdown(VERSION, commits, { allowUnknown: true })
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf('#####') > -1;
-      })
-      .tap(function (lines) {
-        Expect(lines).to.have.length(2);
-        Expect(lines[0]).to.eql('##### Other Changes (uncommon)');
-        Expect(lines[1]).to.eql('##### Other Changes (unknown)');
-      });
-    });
+    //   return Writer.markdown(VERSION, commits, { allowUnknown: true })
+    //   .then(function (changelog) {
+    //     return changelog.split('\n');
+    //   })
+    //   .filter(function (line) {
+    //     return line.indexOf('#####') > -1;
+    //   })
+    //   .tap(function (lines) {
+    //     Expect(lines).to.have.length(2);
+    //     Expect(lines[0]).to.eql('##### Other Changes (uncommon)');
+    //     Expect(lines[1]).to.eql('##### Other Changes (unknown)');
+    //   });
+    // });
 
     it('keeps a commit category on one line if there is only one commit in it', function () {
       var category = 'testing';
@@ -168,18 +168,18 @@ describe('writer', function () {
       ];
 
       return Writer.markdown(VERSION, commits, {})
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf(category) > -1;
-      })
-      .get(0)
-      .then(function (line) {
-        var regex = new RegExp('^\\* \\*\\*' + category + ':\\*\\* ' + subject);
+        .then(function (changelog) {
+          return changelog.split('\n');
+        })
+        .filter(function (line) {
+          return line.indexOf(category) > -1;
+        })
+        .get(0)
+        .then(function (line) {
+          var regex = new RegExp('^\\* \\*\\*' + category + ':\\*\\* ' + subject);
 
-        Expect(line).to.match(regex);
-      });
+          Expect(line).to.match(regex);
+        });
     });
 
     it('breaks a commit category onto its own line if there is more than one commit in it', function () {
@@ -190,18 +190,18 @@ describe('writer', function () {
       ];
 
       return Writer.markdown(VERSION, commits, {})
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf(category) > -1;
-      })
-      .get(0)
-      .then(function (line) {
-        var regex = new RegExp('^\\* \\*\\*' + category + ':\\*\\*$');
+        .then(function (changelog) {
+          return changelog.split('\n');
+        })
+        .filter(function (line) {
+          return line.indexOf(category) > -1;
+        })
+        .get(0)
+        .then(function (line) {
+          var regex = new RegExp('^\\* \\*\\*' + category + ':\\*\\*$');
 
-        Expect(line).to.match(regex);
-      });
+          Expect(line).to.match(regex);
+        });
     });
 
     it('omits commit category if there was no category defined', function () {
@@ -212,16 +212,16 @@ describe('writer', function () {
       ];
 
       return Writer.markdown(VERSION, commits, {})
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf(hash.slice(0, 8)) > -1;
-      })
-      .then(function (lines) {
-        Expect(lines[0]).to.equal('* **testing:** did some testing (12345678)');
-        Expect(lines[1]).to.equal('* other changes (12345678)');
-      });
+        .then(function (changelog) {
+          return changelog.split('\n');
+        })
+        .filter(function (line) {
+          return line.indexOf(hash.slice(0, 8)) > -1;
+        })
+        .then(function (lines) {
+          Expect(lines[0]).to.equal('* **testing:** did some testing (12345678)');
+          Expect(lines[1]).to.equal('* other changes (12345678)');
+        });
     });
 
     it('trims the commit hash to only 8 chars', function () {
@@ -232,17 +232,17 @@ describe('writer', function () {
       ];
 
       return Writer.markdown(VERSION, commits, {})
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf(category) > -1;
-      })
-      .get(0)
-      .then(function (line) {
-        Expect(line).to.not.contain(hash);
-        Expect(line).to.contain(hash.substring(0, 8));
-      });
+        .then(function (changelog) {
+          return changelog.split('\n');
+        })
+        .filter(function (line) {
+          return line.indexOf(category) > -1;
+        })
+        .get(0)
+        .then(function (line) {
+          Expect(line).to.not.contain(hash);
+          Expect(line).to.contain(hash.substring(0, 8));
+        });
     });
 
     it('wraps the hash in a link if a repoUrl is provided', function () {
@@ -253,16 +253,16 @@ describe('writer', function () {
       ];
 
       return Writer.markdown(VERSION, commits, { repoUrl: url })
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf(category) > -1;
-      })
-      .get(0)
-      .then(function (line) {
-        Expect(line).to.contain(url);
-      });
+        .then(function (changelog) {
+          return changelog.split('\n');
+        })
+        .filter(function (line) {
+          return line.indexOf(category) > -1;
+        })
+        .get(0)
+        .then(function (line) {
+          Expect(line).to.contain(url);
+        });
     });
 
     it('wraps an issue/pr number if a repoUrl is provided', function () {
@@ -274,16 +274,16 @@ describe('writer', function () {
       ];
 
       return Writer.markdown(VERSION, commits, { repoUrl: url })
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf(category) > -1;
-      })
-      .get(0)
-      .then(function (line) {
-        Expect(line).to.contain('[#' + pr + '](' + url + '/pull/' + pr + ')');
-      });
+        .then(function (changelog) {
+          return changelog.split('\n');
+        })
+        .filter(function (line) {
+          return line.indexOf(category) > -1;
+        })
+        .get(0)
+        .then(function (line) {
+          Expect(line).to.contain('[#' + pr + '](' + url + '/pull/' + pr + ')');
+        });
     });
 
     it('wraps more than one issue/pr numbers in one commit if a repoUrl is provided', function () {
@@ -295,17 +295,17 @@ describe('writer', function () {
       ];
 
       return Writer.markdown(VERSION, commits, { repoUrl: url })
-      .then(function (changelog) {
-        return changelog.split('\n');
-      })
-      .filter(function (line) {
-        return line.indexOf(category) > -1;
-      })
-      .get(0)
-      .then(function (line) {
-        Expect(line).to.contain('[#' + prs[0] + '](' + url + '/pull/' + prs[0] + ')');
-        Expect(line).to.contain('[#' + prs[1] + '](' + url + '/pull/' + prs[1] + ')');
-      });
+        .then(function (changelog) {
+          return changelog.split('\n');
+        })
+        .filter(function (line) {
+          return line.indexOf(category) > -1;
+        })
+        .get(0)
+        .then(function (line) {
+          Expect(line).to.contain('[#' + prs[0] + '](' + url + '/pull/' + prs[0] + ')');
+          Expect(line).to.contain('[#' + prs[1] + '](' + url + '/pull/' + prs[1] + ')');
+        });
     });
 
   });

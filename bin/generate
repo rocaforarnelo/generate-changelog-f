@@ -3,9 +3,9 @@
 
 var Bluebird = require('bluebird');
 
-var CLI       = require('../lib/cli');
+var CLI = require('../lib/cli');
 var Changelog = require('../lib');
-var File      = require('../lib/file');
+var File = require('../lib/file');
 
 CLI.parse(process.argv);
 
@@ -13,10 +13,10 @@ return Bluebird.all([
   Changelog.generate(CLI),
   File.readIfExists(CLI.file)
 ])
-.spread(function (newLogs, oldLogs) {
-  return File.writeToFile(CLI.file, newLogs + oldLogs);
-})
-.catch(function (err) {
-  console.error(err);
-  process.exit(1);
-});
+  .spread(function (newLogs, oldLogs) {
+    return File.writeToFile(CLI.file, newLogs.toString());
+  })
+  .catch(function (err) {
+    console.error(err);
+    process.exit(1);
+  });

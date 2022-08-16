@@ -3,11 +3,12 @@
   "version": "1.8.0",
   "description": "Generate a changelog from git commits.",
   "bin": {
-    "generate-changelog": "./bin/generate",
-    "changelog": "./bin/generate"
+    "generate-changelog": "bin/generate",
+    "changelog": "bin/generate"
   },
   "main": "./lib/index.js",
   "directories": {
+    "lib": "lib",
     "test": "test"
   },
   "scripts": {
@@ -38,6 +39,7 @@
   },
   "homepage": "https://github.com/lob/generate-changelog#readme",
   "dependencies": {
+    "0g": "^0.0.9",
     "bluebird": "^3.0.6",
     "commander": "^2.9.0",
     "github-url-from-git": "^1.4.0"
@@ -51,6 +53,7 @@
     "eslint-plugin-lob": "^1.1.0",
     "istanbul": "^0.4.1",
     "mocha": "^2.3.4",
+    "semver": "^7.3.7",
     "sinon": "^1.17.2"
   },
   "engine": {
