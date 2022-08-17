@@ -1,20 +1,17 @@
 # Generate Changelog
 
-[![NPM Version](https://badge.fury.io/js/generate-changelog.svg)](https://www.npmjs.com/package/generate-changelog)
-[![Build Status](https://travis-ci.org/lob/generate-changelog.svg)](https://travis-ci.org/lob/generate-changelog)
-[![Coverage Status](https://coveralls.io/repos/lob/generate-changelog/badge.svg?branch=master&service=github)](https://coveralls.io/github/lob/generate-changelog?branch=master)
-[![Dependency Status](https://david-dm.org/lob/generate-changelog.svg)](https://david-dm.org/lob/generate-changelog)
+[![NPM Version](https://badge.fury.io/js/generate-changelog.svg)](https://www.npmjs.com/package/generate-changelogf)
 
-Generate a changelog from git commits. This is meant to be used so that for every patch, minor, or major version, you update the changelog _prior_ to running `npm version` so that the git tag contains the commit that updated both the changelog and version.
+Generate a changelog from git commits using semver tags. You can generate changelogs without maintaining a package.json.
 
 ## Installation
 
 You can either install it as a dev dependency to be referenced in your npm scripts, or you can install this module globally to be used for all of your repos on your local machine.
 
 ```bash
-$ npm i generate-changelog -D # install it as a dev dependency
+$ npm i generate-changelog-f -D # install it as a dev dependency
 # OR
-$ npm i generate-changelog -g # install it globally
+$ npm i generate-changelog-f -g # install it globally
 ```
 
 ## Usage
@@ -52,7 +49,7 @@ And `category` can be anything of your choice. If you use a type not found in th
 You can run this module as a CLI app that prepends the new logs to a file (recommended):
 
 ```bash
-$ changelog -h
+$ changelogf -h
 
   Usage: generate [options]
 
@@ -62,55 +59,32 @@ $ changelog -h
 
     -h, --help             output usage information
     -V, --version          output the version number
-    -p, --patch            create a patch changelog
-    -m, --minor            create a minor changelog
-    -M, --major            create a major changelog
-    -t, --tag <range>      generate from specific tag or range (e.g. v1.2.3 or v1.2.3..v1.2.4)
+    -t, --tag <range>      generate from specific tag, must be a valid semver version (e.g. v1.2.3 or 1.2.3)
     -x, --exclude <types>  exclude selected commit types (comma separated)
     -f, --file [file]      file to write to, defaults to ./CHANGELOG.md, use - for stdout
+    -e, --footer [footer]  footer
     -u, --repo-url [url]   specify the repo URL for commit links, defaults to checking the package.json
-    -a, --allow-unknown    allow unknown commit types
 ```
 
-It's possible to create a `./CHANGELOG.md` file for a specific commit range:
+To generate changelogs from all the commits:
 
 ```bash
-generate-changelog 420c945...2a83752
+changelogf
 ```
 
-Git tags are supported too:
+To include the footer in the description, provide the footer prefix:
 
 ```bash
-generate-changelog release/3.1.2822...release/3.1.2858
+changelogf -e footer
 ```
 
-### Code
+It's possible to create a `./CHANGELOG.md` file for a specific tag, if you want from to generate changelog from 1.8.0 and the previous versions is 1.7.0:
 
-You can write a script that calls the `generate` function and does whatever you want with the new logs:
-
-```js
-var Changelog = require('generate-changelog');
-var Fs        = require('fs');
-
-return Changelog.generate({ patch: true, repoUrl: 'https://github.com/lob/generate-changelog' })
-.then(function (changelog) {
-  Fs.writeFileSync('./CHANGELOG.md', changelog);
-});
+```bash
+changelogf -t 1.8.0
 ```
 
-### Recommended
-
-The way that I would recommend using this module would be the way it's being used in this module: as npm scripts. You should install it as a dev dependency and then add the following to the `scripts` object in your `package.json`:
-
-```json
-"release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
-"release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-"release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
-```
-
-### GitHub Actions
-
-You can run this module in a GitHub Actions workflow using the [generate-changelog-action](https://github.com/marketplace/actions/generate-changelog-action) Action.
+will generate changelogs from commits from 1.7.0 to 1.8.0 tags
 
 ## Testing
 
