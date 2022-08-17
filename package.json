@@ -1,10 +1,10 @@
 {
-  "name": "generate-changelogf",
+  "name": "generate-changelog-by-tag",
   "version": "1.9.1",
-  "description": "Generate a changelog from git commits.",
+  "description": "Generate a changelog from git commits using tags.",
   "bin": {
-    "generate-changelog": "bin/generate",
-    "changelogf": "bin/generate"
+    "generate-changelog-by-tag": "bin/generate",
+    "changelogbytag": "bin/generate"
   },
   "main": "./lib/index.js",
   "directories": {
