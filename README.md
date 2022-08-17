@@ -1,6 +1,6 @@
 # Generate Changelog
 
-[![NPM Version](https://badge.fury.io/js/generate-changelog.svg)](https://www.npmjs.com/package/generate-changelogf)
+[![NPM Version](https://badge.fury.io/js/generate-changelog.svg)](https://www.npmjs.com/package/generate-changelog-by-tag)
 
 Generate a changelog from git commits using semver tags. You can generate changelogs without maintaining a package.json.
 
@@ -9,9 +9,9 @@ Generate a changelog from git commits using semver tags. You can generate change
 You can either install it as a dev dependency to be referenced in your npm scripts, or you can install this module globally to be used for all of your repos on your local machine.
 
 ```bash
-$ npm i generate-changelog-f -D # install it as a dev dependency
+$ npm i generate-changelog-by-tag -D # install it as a dev dependency
 # OR
-$ npm i generate-changelog-f -g # install it globally
+$ npm i generate-changelog-by-tag -g # install it globally
 ```
 
 ## Usage
