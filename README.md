@@ -59,7 +59,7 @@ $ changelogf -h
 
     -h, --help             output usage information
     -V, --version          output the version number
-    -t, --tag     generate from specific tag, must be a valid semver version (e.g. v1.2.3 or 1.2.3)
+    -t, --tag              generate from specific tag, must be a valid semver version (e.g. v1.2.3 or 1.2.3)
     -x, --exclude <types>  exclude selected commit types (comma separated)
     -f, --file [file]      file to write to, defaults to ./CHANGELOG.md, use - for stdout
     -e, --footer [footer]  footer
