@@ -144,19 +144,3 @@
 * **readme:**  add npm and dependency stats badges ([69d81f66](https://github.com/lob/generate-changelog/commit/69d81f661b73248560d319822ff9d262b42c18b3))
 
 ,
-
-#### v1.0.0
-
-##### Other Changes (Bug Fixes)
-
-* **writer:**  group all uncommon types together ([10caf5f2](https://github.com/lob/generate-changelog/commit/10caf5f2afa15263f91087cf3ca11354d29f92ba))
-* **cli:**  prepend to a file instead of printing to stdout ([92e1085d](https://github.com/lob/generate-changelog/commit/92e1085d40e4c3971d96b1dc5a78c8a031cc1520))
-
-##### Other Changes (Documentation Changes)
-
-* **npm:**  update recommended npm scripts ([2eef1597](https://github.com/lob/generate-changelog/commit/2eef159715f1fb083a18e0d5ef3fa16d2c629854))
-
-##### Other Changes (New Features)
-
-* **cli:**  generate changelog ([c164cff8](https://github.com/lob/generate-changelog/commit/c164cff85071ec1694b4aaec92f14c4620504f9c))
-
