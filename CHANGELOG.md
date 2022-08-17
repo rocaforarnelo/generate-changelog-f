@@ -1,5 +1,17 @@
 
 
+#### v1.9.4
+
+##### Other Changes (Bug Fixes)
+
+*  add semver to dependencies ([b89631de](https://github.com/rocaforarnelo/generate-changelog-f/commit/b89631de685f9ba583402d9ace49396ffd3313ef))
+
+##### Other Changes (Chores)
+
+*  update README ([49810a8c](https://github.com/rocaforarnelo/generate-changelog-f/commit/49810a8c1908490e87e1b3f994f3aa20832dba21))
+
+,
+
 #### v1.9.3
 
 ##### Other Changes (Chores)
