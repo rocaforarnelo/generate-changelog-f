@@ -1,6 +1,6 @@
 {
   "name": "generate-changelog-by-tag",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "description": "Generate a changelog from git commits using tags.",
   "bin": {
     "generate-changelog-by-tag": "bin/generate",
