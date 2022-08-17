@@ -1,5 +1,24 @@
 
 
+#### v1.9.3
+
+##### Other Changes (Chores)
+
+*  update README ([c37bc84d](https://github.com/rocaforarnelo/generate-changelog-f/commit/c37bc84dfdd7172befc9476419ba2a22cb4a5266))
+
+,
+
+#### v1.9.2
+
+##### Other Changes (Chores)
+
+*  update README ([f528e20a](https://github.com/rocaforarnelo/generate-changelog-f/commit/f528e20a1517937841e88a6c763a53d0fcb79a40))
+*  update README ([ae5814f2](https://github.com/rocaforarnelo/generate-changelog-f/commit/ae5814f2ef993a448d7b91e09b419395940f0115))
+*  update package.json ([4e8b8462](https://github.com/rocaforarnelo/generate-changelog-f/commit/4e8b846236c9d95492706b1ec44926134242fae6))
+*  update generation keyword ([62406bf3](https://github.com/rocaforarnelo/generate-changelog-f/commit/62406bf3bd5e093494b9f9a9fb4121ea749ff485))
+
+,
+
 #### v1.9.1
 
 ##### Other Changes (Chores)

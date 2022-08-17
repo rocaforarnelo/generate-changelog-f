@@ -38,7 +38,8 @@
     "0g": "^0.0.9",
     "bluebird": "^3.0.6",
     "commander": "^2.9.0",
-    "github-url-from-git": "^1.4.0"
+    "github-url-from-git": "^1.4.0",
+    "semver": "^7.3.7"
   },
   "devDependencies": {
     "chai": "^3.4.1",
