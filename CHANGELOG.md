@@ -1,5 +1,19 @@
 
 
+#### v1.9.0
+
+##### Other Changes (Bug Fixes)
+
+* **documentation:**  quick typo fix ([#57](https://github.com/lob/generate-changelog/pull/57)) ([7e9ffd66](https://github.com/lob/generate-changelog/commit/7e9ffd66f70503b812f65a36311842b6abbd93c3))
+*  update for usage on projects that didn't use the package from the start ([5830b500](https://github.com/lob/generate-changelog/commit/5830b5005eba0ceaac01b5cfeab9e1470f8045d0))
+
+##### Other Changes (New Features)
+
+*  add function to generate change logs based on tag ([bb415254](https://github.com/lob/generate-changelog/commit/bb415254a9e5635781b386fb70e790973aaf27e4))
+*  add the ability to define a footer ([8b24d98a](https://github.com/lob/generate-changelog/commit/8b24d98ad03050b3b5b19155f3cc2db0a08666f5))
+
+,
+
 #### v1.8.0
 
 ##### Other Changes (Documentation Changes)
