@@ -1,5 +1,5 @@
 {
-  "name": "generate-changelog",
+  "name": "generate-changelogf",
   "version": "1.9.1",
   "description": "Generate a changelog from git commits.",
   "bin": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lob/generate-changelog.git"
+    "url": "git+https://github.com/rocaforarnelo/generate-changelog-f.git"
   },
   "keywords": [
     "changelog",
@@ -28,12 +28,12 @@
     "git",
     "semver"
   ],
-  "author": "Lob <support@lob.com>",
+  "author": "F",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lob/generate-changelog/issues"
+    "url": "https://github.com/rocaforarnelo/generate-changelog-f/issues"
   },
-  "homepage": "https://github.com/lob/generate-changelog#readme",
+  "homepage": "https://github.com/rocaforarnelo/generate-changelog-f#readme",
   "dependencies": {
     "0g": "^0.0.9",
     "bluebird": "^3.0.6",
