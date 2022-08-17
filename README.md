@@ -1,6 +1,6 @@
 # Generate Changelog
 
-[![NPM Version](https://badge.fury.io/js/generate-changelog.svg)](https://www.npmjs.com/package/generate-changelog-by-tag)
+[![NPM Version](https://badge.fury.io/js/generate-changelog-by-tag.svg)](https://www.npmjs.com/package/generate-changelog-by-tag)
 
 Generate a changelog from git commits using semver tags. You can generate changelogs without maintaining a package.json.
 
