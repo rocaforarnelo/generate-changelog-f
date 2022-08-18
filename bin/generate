@@ -14,7 +14,7 @@ return Bluebird.all([
   File.readIfExists(CLI.file)
 ])
   .spread(function (newLogs, oldLogs) {
-    return File.writeToFile(CLI.file, newLogs.toString());
+    return File.writeToFile(CLI.file, newLogs.join(''));
   })
   .catch(function (err) {
     console.error(err);

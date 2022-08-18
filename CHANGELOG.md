@@ -1,5 +1,3 @@
-
-
 #### v1.9.5
 
 ##### Chores
@@ -9,8 +7,6 @@
 ##### OTHER CHANGES (log)
 
 *  add console log to types ([3c5b4c4b](https://github.com/rocaforarnelo/generate-changelog-f/commit/3c5b4c4b51f299364d08a57ca4ccf6e8414aefe0))
-
-,
 
 #### v1.9.4
 
@@ -22,15 +18,11 @@
 
 *  update README ([49810a8c](https://github.com/rocaforarnelo/generate-changelog-f/commit/49810a8c1908490e87e1b3f994f3aa20832dba21))
 
-,
-
 #### v1.9.3
 
 ##### Chores
 
 *  update README ([c37bc84d](https://github.com/rocaforarnelo/generate-changelog-f/commit/c37bc84dfdd7172befc9476419ba2a22cb4a5266))
-
-,
 
 #### v1.9.2
 
@@ -41,16 +33,12 @@
 *  update package.json ([4e8b8462](https://github.com/rocaforarnelo/generate-changelog-f/commit/4e8b846236c9d95492706b1ec44926134242fae6))
 *  update generation keyword ([62406bf3](https://github.com/rocaforarnelo/generate-changelog-f/commit/62406bf3bd5e093494b9f9a9fb4121ea749ff485))
 
-,
-
 #### v1.9.1
 
 ##### Chores
 
 *  update README ([a4e0e24f](https://github.com/rocaforarnelo/generate-changelog-f/commit/a4e0e24fb0688bc232a42c2fbe3e8702000ed9c6))
 *  update CHANGELOG ([54fa1b4f](https://github.com/rocaforarnelo/generate-changelog-f/commit/54fa1b4f371a0e1af224c1b33e5d9dc89d1358ed))
-
-,
 
 #### v1.9.0
 
@@ -64,8 +52,6 @@
 *  add function to generate change logs based on tag ([bb415254](https://github.com/rocaforarnelo/generate-changelog-f/commit/bb415254a9e5635781b386fb70e790973aaf27e4))
 *  add the ability to define a footer ([8b24d98a](https://github.com/rocaforarnelo/generate-changelog-f/commit/8b24d98ad03050b3b5b19155f3cc2db0a08666f5))
 
-,
-
 #### v1.8.0
 
 ##### Documentation Changes
@@ -76,15 +62,11 @@
 
 *  Allow unknown commit types ([#46](https://github.com/rocaforarnelo/generate-changelog-f/pull/46)) ([b2fb9ff5](https://github.com/rocaforarnelo/generate-changelog-f/commit/b2fb9ff5517b7be309f6050dd7b557b53668e56b))
 
-,
-
 #### v1.7.1
 
 ##### Bug Fixes
 
 * **writer:**  fix commit URL for Gitlab repos ([#40](https://github.com/rocaforarnelo/generate-changelog-f/pull/40)) ([656a2bcc](https://github.com/rocaforarnelo/generate-changelog-f/commit/656a2bcc589433cf7f9982e5ca4d0493a56126eb))
-
-,
 
 #### v1.7.0
 
@@ -96,15 +78,11 @@
 
 * **git:**  add support for breaking changes ([#34](https://github.com/rocaforarnelo/generate-changelog-f/pull/34)) ([d697b273](https://github.com/rocaforarnelo/generate-changelog-f/commit/d697b27328f72c30d75202dcf87394564849d69d))
 
-,
-
 #### v1.6.0
 
 ##### New Features
 
 * **writer:**  add links to PRs numbers in commits text ([#31](https://github.com/rocaforarnelo/generate-changelog-f/pull/31)) ([7015d433](https://github.com/rocaforarnelo/generate-changelog-f/commit/7015d4330da9c10e32d6d259a89beb096a904c55))
-
-,
 
 #### v1.5.0
 
@@ -115,8 +93,6 @@
 ##### New Features
 
 * **git:**  generate from specific tag ([#28](https://github.com/rocaforarnelo/generate-changelog-f/pull/28)) ([cadb4e22](https://github.com/rocaforarnelo/generate-changelog-f/commit/cadb4e22a20632a7d765a3d97fe9727abb2ce228))
-
-,
 
 #### v1.4.0
 
@@ -136,15 +112,11 @@
 
 * **travis:**  run against newer versions of node ([f7c3ba9b](https://github.com/rocaforarnelo/generate-changelog-f/commit/f7c3ba9b52c7ae91808d3408c480e0eef88c30e0))
 
-,
-
 #### v1.3.1
 
 ##### Bug Fixes
 
 * **exclude:**  allow arguments to be passed in to -x ([3faf08a6](https://github.com/rocaforarnelo/generate-changelog-f/commit/3faf08a634449e057f67eaa9c13872f53c8127d0))
-
-,
 
 #### v1.3.0
 
@@ -156,15 +128,11 @@
 
 * **writer:**  update commit types ([8945027b](https://github.com/rocaforarnelo/generate-changelog-f/commit/8945027b693d5653052c031d2ac450250bd6bc41))
 
-,
-
 #### v1.2.1
 
 ##### Bug Fixes
 
 * **exclude:**  REALLY exclude listed commit types ([9f836575](https://github.com/rocaforarnelo/generate-changelog-f/commit/9f8365750af98d1e540543abecc3e4c51d3fbf9a))
-
-,
 
 #### v1.2.0
 
@@ -180,23 +148,17 @@
 
 * **package:**  fix coverage for lib/package.js ([006a2a04](https://github.com/rocaforarnelo/generate-changelog-f/commit/006a2a04cc3df009d18e7fc99f1cd96a9d108624))
 
-,
-
 #### v1.1.0
 
 ##### New Features
 
 * **version:**  remove the incrementation flag requirement ([a8b45090](https://github.com/rocaforarnelo/generate-changelog-f/commit/a8b450901df9a7d0e5817b810ef7de2bcb12b4df))
 
-,
-
 #### v1.0.2
 
 ##### Bug Fixes
 
 * **git:**  enfore lowercase commit.type ([d53e497a](https://github.com/rocaforarnelo/generate-changelog-f/commit/d53e497a69179e9ba2d42416293285f4163c0b97))
-
-,
 
 #### v1.0.1
 
@@ -209,4 +171,3 @@
 
 * **readme:**  add npm and dependency stats badges ([69d81f66](https://github.com/rocaforarnelo/generate-changelog-f/commit/69d81f661b73248560d319822ff9d262b42c18b3))
 
-,
